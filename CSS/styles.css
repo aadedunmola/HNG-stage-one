@@ -34,6 +34,7 @@ h3 {
 .top-container {
     background-color: #C4DFDF;
     padding-top: 100px;
+    @media (max-width: 628px){ background-image: none };
 }
 
 

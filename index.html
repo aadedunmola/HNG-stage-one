@@ -17,57 +17,72 @@
 
 <body>
 
-    <div class="top-container">
+    <header class="top-container">
         <img class="top-cloud" src="images/CSS - My Site Images/cloud.png" alt="cloud-img">
         <h1 data-testid="slackUserName">I'm Adeniyi Adedunmola</h1>
         <p>a developer</p>
         <img class="bottom-cloud" src="images/CSS - My Site Images/cloud.png" alt="cloud-img">
         <img src="images/CSS - My Site Images/mountain.png" alt="cloud-img">
-    </div>
+    </header>
 
-    <div class="middle-container">
-        <div class="profile">
-            <img src="images/CSS - My Site Images/5856.jpg" alt="adedunmola-adeniyi" data-testid="slackDisplayImage" style="height: 15%; width: 15%">
+    <main class="middle-container">
+        <article class="profile">
+            <img src="images/CSS - My Site Images/5856.jpg" alt="adedunmola-adeniyi" data-testid="slackDisplayImage"
+                style="height: 15%; width: 15%">
             <h2>Slack Info</h2>
-            <p class="text">I'm Adeniyi Adedunmola, which is also my slack name. I'm enthusiastic about technology, also a beginner in frontend
+            <p class="text">I'm Adeniyi Adedunmola, which is also my slack name. I'm enthusiastic about technology, also
+                a beginner in frontend
             </p>
-        </div>
+        </article>
         <hr>
-        <div class="timeandTracks">
+        <main class="timeandTracks">
             <h2>Day and Time.</h2>
-            <div class="timeandTrack-row">
+            <section class="timeandTrack-row">
                 <img class="timeandTrack" src="images/CSS - My Site Images/42502.jpg" alt="computer">
                 <h3>Current day of the week</h3>
-                <p>Day: <span data-testid="currentDayOfTheWeek"></span>
+                <p>Day: <span data-testid="currentDayOfTheWeek" id="dayOfWeekElement"></span>
                 </p>
-            </div>
-            <div class="timeandTrack-row">
+            </section>
+            <section class="timeandTrack-row">
                 <img class="UTC-time" src="images/CSS - My Site Images/set_of_glyph_clocks.jpg" alt="utc time">
-                <h3>Current UTC time</h3>
-                <p>Time:<span data-testid="currentUTCTime">00:00:00</span></p>
-            </div>
-        </div>
+                <h3>Current UTC time in milliseconds</h3>
+                <p>Time:<span data-testid="currentUTCTime" id="utcTime"></span></p>
+            </section>
+        </main>
         <hr>
-        <div class="contact-me">
+        <figure class="contact-me">
             <h2>Track</h2>
-            <p class="message" data-testid="myTrack">I'm enrolled in  frontend as a beginner in the ongoing HNG x internship
+            <p class="message" data-testid="myTrack">I'm enrolled in frontend as a beginner in the ongoing HNG x
+                internship
             </p>
             <a class="btn" href="mailto:aadedunmola26@gmail..com">CONTACT ME</a>
-        </div>
-    </div>
+        </figure>
+    </main>
 
 
-    <div class="bottom-container">
+    <footer class="bottom-container">
         <a class="footer-link"
             href="https://www.linkedin.com/in/adedunmola-adeniyi-51420b270?trk=contact-info">LinkedIn</a>
         <a class="footer-link" href="#">Twitter</a>
-        <a class="footer-link" data-testid="githubURL" href="https://github.com/aadedunmola">Github</a>
+        <a class="footer-link" data-testid="githubURL" href="https://github.com/aadedunmola/hng-stage-one">Github</a>
         <p class="copyright">© 2023 Adeniyi Adedunmola.</p>
-    </div>
+    </footer>
 
-    <script src="script.js"></script>
-
-   
+    <script>
+            const currentUTCTimeElement = document.getElementById('utcTime');
+            const currentUTCTime = Date.now(); // Get current UTC time in milliseconds
+    
+            currentUTCTimeElement.textContent = currentUTCTime;
+        </script>
+    <script>
+            const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const today = new Date();
+            const dayOfWeek = today.getDay();
+            const currentDayOfWeek = daysOfWeek[dayOfWeek];
+            const dayOfWeekElement = document.getElementById('dayOfWeek');
+            dayOfWeekElement.textContent = currentDayOfWeek;
+        </script>
+ 
 
 </body>
 
